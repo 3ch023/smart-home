@@ -12,12 +12,12 @@ export class Device {
         this.selector = "#" + this.id;
         this.render();
         this.initializeEvents();
-        this.self = this.controlPanel.find(this.selector);
     }
 
     render() {
         let html = "<div class=\"device\" id='" + this.id + "'>" + this.getInnerHtml() + "</div>";
         this.controlPanel.append(html);
+        this.self = this.controlPanel.find(this.selector);
     }
 
     refresh() {

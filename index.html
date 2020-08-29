@@ -15,12 +15,18 @@
     <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-dark.css">
     <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-darkest.css">
 
+    <!-- Include global variables first -->
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-global.css">
+
     <!-- Include index-vars.css for all components you need -->
     <link rel="stylesheet" href="node_modules/@spectrum-css/page/dist/index-vars.css">
     <link rel="stylesheet" href="node_modules/@spectrum-css/typography/dist/index-vars.css">
     <link rel="stylesheet" href="node_modules/@spectrum-css/icon/dist/index-vars.css">
     <link rel="stylesheet" href="node_modules/@spectrum-css/button/dist/index-vars.css">
     <link rel="stylesheet" href="node_modules/@spectrum-css/toggle/dist/index-vars.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/stepper/dist/index-vars.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/textfield/dist/index-vars.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/label/dist/index-vars.css">
 
     <title>My Home</title>
   </head>
@@ -29,8 +35,10 @@
 
     <div id="control-panel"></div>
 
-    <h3>Light: " + this.name + " </h3>
-
     <script src="dist/main.js"></script>
+    <script src="node_modules/loadicons/index.js"></script>
+    <script>
+        loadIcons('node_modules/@spectrum-css/icon/dist/spectrum-css-icons.svg');
+    </script>
   </body>
 </html>

@@ -17,10 +17,10 @@ export class Light extends Device {
         let checked = this.power ? 'checked' : '';
         let label = this.power ? 'On' : 'Off';
         return "<h3>Light: " + this.name + " </h3> " +
-            "<div class=\"spectrum-ToggleSwitch\">\n" +
-            "        <input type=\"checkbox\" class=\"spectrum-ToggleSwitch-input\" id=\"toggle-onoff-1\" " + checked + ">" +
-            "        <span class=\"spectrum-ToggleSwitch-switch\"></span>\n" +
-            "        <label class=\"spectrum-ToggleSwitch-label\" for=\"toggle-onoff-1\">" + label + "</label>\n" +
+            "<div class='spectrum-ToggleSwitch'>" +
+            "        <input type='checkbox' class='spectrum-ToggleSwitch-input' id='toggle-onoff-1' " + checked + ">" +
+            "        <span class='spectrum-ToggleSwitch-switch'></span>" +
+            "        <label class='spectrum-ToggleSwitch-label' for='toggle-onoff-1'>" + label + "</label>" +
             "      </div>";
     }
 }
