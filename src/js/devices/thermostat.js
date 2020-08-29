@@ -1,28 +1,48 @@
 import {Device} from "./device";
 
+/**
+ * Thermostat device, allowing user to change temperature in a certain area .
+ */
 export class Thermostat extends Device {
+    /**
+     * Creates a new device instance.
+     * @param {String} id - unique identifier of a device
+     * @param {String} name - name, displayed on the control panel
+     * @param {Number} temperature of this thermostat
+     */
     constructor(id, name, temperature) {
         super(id, name);
         this.temperature = temperature;
     }
 
+    /**
+     * Initialize UI elements with logic for certain device.
+     * Should be called only after component is rendered.
+     */
     initializeEvents() {
-        this.self.on("click", '.spectrum-Stepper-stepUp', (event) => {
+        if (this.self.length === 0) {
+            console.warn("Failed to initialize events for device " + this.id);
+            return;
+        }
+        this.self.on("click", '.spectrum-Stepper-stepUp', () => {
             this.temperature = this.temperature + 5;
             this.refresh();
         });
-        this.self.on("click", '.spectrum-Stepper-stepDown', (event) => {
+        this.self.on("click", '.spectrum-Stepper-stepDown', () => {
             this.temperature = this.temperature - 5;
             this.refresh();
         });
-        this.self.find('.spectrum-Textfield-input').on('change', function() {
-            this.temperature = this.value;
+        this.self.on("change", '.spectrum-Stepper-textfield', () => {
+            this.temperature = this.self.find('.spectrum-Textfield-input').val();
             this.refresh();
         });
     }
 
+    /**
+     * Generate html for this device with current state.
+     * @returns {String} Returns html representation of the device.
+     */
     getInnerHtml() {
-
         return "<h3>Temperature: " + this.name + " </h3>" +
             "    <span class='spectrum-Label spectrum-Label--large spectrum-Label--" + this.getColor() + "'>" + this.temperature + "</span> <br><br>" +
             "    <div class='spectrum-Stepper is-focused'>" +
@@ -44,6 +64,9 @@ export class Thermostat extends Device {
             "    </div>";
     }
 
+    /**
+     * Return color indicator depending on the devices temperature.
+     */
     getColor() {
         if (this.temperature <= 15) {
             return "blue";

@@ -22,7 +22,9 @@
     "@spectrum-css/toggle": "^3.0.0-beta.2",
     "@spectrum-css/typography": "^2.1.3",
     "@spectrum-css/vars": "^2.3.0",
+    "css-loader": "^4.2.2",
     "loadicons": "^1.0.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
