@@ -1,0 +1,45 @@
+<!doctype html>
+<html class="spectrum spectrum--medium spectrum--light">
+  <head>
+    <meta charset="UTF-8">
+    <!-- Include global variables first -->
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-global.css">
+
+    <!-- Include only the scales your application needs -->
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-medium.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-large.css">
+
+    <!-- Include only the colorstops your application needs -->
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-lightest.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-light.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-dark.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/vars/dist/spectrum-darkest.css">
+
+    <!-- Include index-vars.css for all components you need -->
+    <link rel="stylesheet" href="node_modules/@spectrum-css/page/dist/index-vars.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/typography/dist/index-vars.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/icon/dist/index-vars.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/button/dist/index-vars.css">
+    <link rel="stylesheet" href="node_modules/@spectrum-css/toggle/dist/index-vars.css">
+
+    <title>My Home</title>
+  </head>
+  <body>
+    <h1 class="spectrum-Heading spectrum-Heading--L">My Home</h1>
+
+    <div class="device">
+      <h3>Light </h3>
+<!--      https://opensource.adobe.com/spectrum-css/toggle.html-->
+      <div class="spectrum-ToggleSwitch">
+        <input type="checkbox" class="spectrum-ToggleSwitch-input" id="toggle-onoff-1" checked>
+        <span class="spectrum-ToggleSwitch-switch"></span>
+        <label class="spectrum-ToggleSwitch-label" for="toggle-onoff-1">Toggle On</label>
+      </div>
+
+
+    </div>
+
+
+    <script src="dist/main.js"></script>
+  </body>
+</html>
