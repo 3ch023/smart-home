@@ -36,7 +36,7 @@ export class Light extends Device {
         let label = this.power ? 'On' : 'Off';
         let opacity = this.power ? 1 : 0;
         return "<div class=\"light-bulb-container ui-draggable\" ><div class='light-bulb' style=\"opacity: " + opacity + "; \"></div></div>" +
-            "<p>Light: " + this.name + " </p> " +
+            "<h1>Light: " + this.name + " </h1> " +
             "<div class='spectrum-ToggleSwitch'>" +
             "        <input type='checkbox' class='spectrum-ToggleSwitch-input' id='toggle-onoff-1' " + checked + ">" +
             "        <span class='spectrum-ToggleSwitch-switch'></span>" +
