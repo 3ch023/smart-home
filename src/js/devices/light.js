@@ -1,5 +1,8 @@
 import {Device} from "./device";
 
+/**
+ * Light device. Have you tried to switch it off and on again?
+ */
 export class Light extends Device {
     /**
      * Creates a new device instance.

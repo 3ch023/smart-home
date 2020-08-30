@@ -1,11 +1,14 @@
 import {Device} from "./device";
 
+/**
+ * Curtains device, allowing user to open and close curtains in the room.
+ */
 export class Curtains extends Device {
     /**
      * Creates a new device instance.
      * @param {String} id - unique identifier of a device
      * @param {String} name - name, displayed on the control panel
-     * @param {Boolean} power identifies if this light's power is on or off
+     * @param {Boolean} open curtains are open or not
      */
     constructor(id, name, open) {
         super(id, name);
@@ -30,11 +33,11 @@ export class Curtains extends Device {
     getInnerHtml() {
         let checked = this.open ? 'checked' : '';
         let label = this.open ? 'Open' : 'Closed';
-        return "<h3>Curtains: " + this.name + " </h3> " +
+        return "<h3>Curtains: " + this.name + "</h3> " +
             "<div class='spectrum-ToggleSwitch'>" +
-            "        <input type='checkbox' class='spectrum-ToggleSwitch-input' id='toggle-onoff-1' " + checked + ">" +
-            "        <span class='spectrum-ToggleSwitch-switch'></span>" +
-            "        <label class='spectrum-ToggleSwitch-label' for='toggle-onoff-1'>" + label + "</label>" +
-            "      </div>";
+            "<input type='checkbox' class='spectrum-ToggleSwitch-input' id='toggle-onoff-1' " + checked + ">" +
+            "<span class='spectrum-ToggleSwitch-switch'></span>" +
+            "<label class='spectrum-ToggleSwitch-label' for='toggle-onoff-1'>" + label + "</label>" +
+            "</div>";
     }
 }

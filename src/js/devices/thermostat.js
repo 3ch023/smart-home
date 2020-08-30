@@ -1,7 +1,7 @@
 import {Device} from "./device";
 
 /**
- * Thermostat device, allowing user to change temperature in a certain area .
+ * Thermostat device, allowing user to change temperature in a certain area.
  */
 export class Thermostat extends Device {
     /**
@@ -9,10 +9,14 @@ export class Thermostat extends Device {
      * @param {String} id - unique identifier of a device
      * @param {String} name - name, displayed on the control panel
      * @param {Number} temperature of this thermostat
+     * @param {Number} min temperature
+     * @param {Number} max temperature
      */
-    constructor(id, name, temperature) {
+    constructor(id, name, temperature, min, max) {
         super(id, name);
         this.temperature = temperature;
+        this.min = min;
+        this.max = max;
     }
 
     /**
@@ -25,16 +29,16 @@ export class Thermostat extends Device {
             return;
         }
         this.self.on("click", '.spectrum-Stepper-stepUp', () => {
-            this.temperature = this.temperature + 5;
-            this.refresh();
+            let newValue = this.temperature + 5;
+            this.updateTemperature(newValue);
         });
         this.self.on("click", '.spectrum-Stepper-stepDown', () => {
-            this.temperature = this.temperature - 5;
-            this.refresh();
+            let newValue = this.temperature - 5;
+            this.updateTemperature(newValue);
         });
         this.self.on("change", '.spectrum-Stepper-textfield', () => {
-            this.temperature = this.self.find('.spectrum-Textfield-input').val();
-            this.refresh();
+            let newValue = this.self.find('.spectrum-Textfield-input').val();
+            this.updateTemperature(newValue);
         });
     }
 
@@ -75,5 +79,27 @@ export class Thermostat extends Device {
         } else {
             return "red";
         }
+    }
+
+    /**
+     * Set the new temperature. Will set the new temperature only if it is valid.
+     * @param {Number} new temperature value
+     */
+    updateTemperature(newValue) {
+        if (this.isValid(newValue)) {
+            this.temperature = newValue;
+            this.refresh();
+        } else {
+            this.self.find('.spectrum-Stepper').addClass('is-invalid');
+        }
+    }
+
+    /**
+     * Validates the temperature.
+     * @param {Number} temperature value to be checked
+     * @returns {Boolean} Returns true if the temperature is within min and max limit, false if not.
+     */
+    isValid(temperature) {
+        return temperature >= this.min && temperature <= this.max;
     }
 }
