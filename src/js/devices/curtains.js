@@ -33,7 +33,7 @@ export class Curtains extends Device {
     getInnerHtml() {
         let checked = this.open ? 'checked' : '';
         let label = this.open ? 'Open' : 'Closed';
-        return "<h3>Curtains: " + this.name + "</h3> " +
+        return "<p>Curtains: " + this.name + "</p> " +
             "<div class='spectrum-ToggleSwitch'>" +
             "<input type='checkbox' class='spectrum-ToggleSwitch-input' id='toggle-onoff-1' " + checked + ">" +
             "<span class='spectrum-ToggleSwitch-switch'></span>" +

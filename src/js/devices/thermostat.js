@@ -47,7 +47,7 @@ export class Thermostat extends Device {
      * @returns {String} Returns html representation of the device.
      */
     getInnerHtml() {
-        return "<h3>Temperature: " + this.name + " </h3>" +
+        return "<p>Temperature: " + this.name + " </p>" +
             "    <span class='spectrum-Label spectrum-Label--large spectrum-Label--" + this.getColor() + "'>" + this.temperature + "</span> <br><br>" +
             "    <div class='spectrum-Stepper is-focused'>" +
             "      <div class='spectrum-Textfield spectrum-Stepper-textfield'>" +

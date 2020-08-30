@@ -1,15 +1,13 @@
+import DevicesAPI from "./registry/DevicesAPI";
 require('../css/style.css');
-import {DevicesRegistry} from "./devicesregistry.js";
 let $ = require('jquery');
 
 /**
  * Starts the app. Loads devices from registry and attaching to the control panel
  */
 $(function() {
-    let registry = new DevicesRegistry();
-    let devices = registry.loadDevices();
+    let devices = DevicesAPI.loadDevices();
     let controlPanel = $('#control-panel');
-
     attachDevices(controlPanel, devices);
 });
 
@@ -22,5 +20,5 @@ $(function() {
 function attachDevices(controlPanel, devices) {
     $.each(devices, function (i, device) {
         device.attachTo(controlPanel);
-    })
+    });
 }
