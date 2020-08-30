@@ -5,9 +5,6 @@ const NormalModuleReplacementPlugin = require("webpack/lib/NormalModuleReplaceme
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-  },
   plugins: [
     new NormalModuleReplacementPlugin(/src\/js\/registry\/DevicesAPI\.js/,
         './DevicesAPI.mock.js'
