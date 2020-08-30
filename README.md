@@ -12,6 +12,7 @@ npm install
 ```bash
 npm run build
 ```
+This build will DevicesAPI.mock.js as a source of devices. (NormalModuleReplacementPlugin) 
 
 ## Run Dev Server
 ```bash
@@ -23,6 +24,7 @@ Project will run at [http://localhost:8081/](http://localhost:8081/)
 ```bash
 npm run prod
 ```
+This will use the actual DevicesAPI implementation instead of mock.  
 
 ## Troubleshooting
 1. CORS errors - some files can't be loaded
@@ -30,6 +32,9 @@ This happens if you just open index.html in browser. Try running the browser wit
 ```
 open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
 ```
+
+## How to
+[Add new device](src/js/devices/AddNewDevice.md)
 
 ## Credits
 [Light bulb animation](https://jsfiddle.net/lesson8/4rkQZ/1/)
