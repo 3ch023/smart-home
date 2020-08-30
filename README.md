@@ -26,4 +26,5 @@ This happens if you just open index.html in browser. Try running the browser wit
 open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security
 ```
 
-
+## Credits
+[Light bulb animation](https://jsfiddle.net/lesson8/4rkQZ/1/)

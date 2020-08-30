@@ -17,10 +17,11 @@ export class Light extends Device {
      * Should be called only after component is rendered.
      */
     initializeEvents() {
-        this.controlPanel.on("click", this.selector, (event) => {
+        this.controlPanel.on("click", this.selector, () => {
             this.power = !this.power;
             this.refresh();
         });
+
     }
 
     /**
@@ -30,7 +31,9 @@ export class Light extends Device {
     getInnerHtml() {
         let checked = this.power ? 'checked' : '';
         let label = this.power ? 'On' : 'Off';
-        return "<h3>Light: " + this.name + " </h3> " +
+        let opacity = this.power ? 1 : 0;
+        return "<div class=\"light-bulb-container ui-draggable\" ><div class='light-bulb' style=\"opacity: " + opacity + "; \"></div></div>" +
+            "<h3>Light: " + this.name + " </h3> " +
             "<div class='spectrum-ToggleSwitch'>" +
             "        <input type='checkbox' class='spectrum-ToggleSwitch-input' id='toggle-onoff-1' " + checked + ">" +
             "        <span class='spectrum-ToggleSwitch-switch'></span>" +

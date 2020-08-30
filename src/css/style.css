@@ -3,11 +3,29 @@
 }
 .smarthome-device {
     border: 1.0625rem solid #e6e6e6;
-    padding: 10px;
+    padding: 0 10px;
     margin: 20px 0;
     min-height: 200px;
+    background-color: #b9b9b9;
 }
 
 body {
     padding: 0 20%;
+}
+
+.light-bulb {
+    width: 150px;
+    height: 150px;
+    background: url(../images/lightbulb.png) no-repeat 0 0;
+}
+
+.light-bulb-container {
+    float: right;
+    width: 150px;
+    height: 150px;
+    top: 5%;
+    left: 40%;
+    background: url(../images/lightbulb.png) no-repeat -150px 0;
+    cursor: move;
+    z-index: 800;
 }
